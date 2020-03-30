@@ -2,6 +2,11 @@
  * 
  */
 
+	function id_ch(){
+		window.open("join_id_pop.html", "id_check", "width=600, height=400px, resizable=no, scrollbars=no");
+	}
+
+
 	function check(){
 		var name_chk= /^[가-힣]{1,}$/;
 		var id_chk = /^[a-zA-Z][a-zA-Z0-9_]{3,16}$/;
@@ -10,8 +15,9 @@
 		var pw_chk2 = /^(?=.*[0-9]).+$/; //숫자가 하나라도 있는지~
 		var pw_chk3 = /^(?=.*[~!@#$%^&*()_+|{}<>?]).+$/; //특문이 하나라도 있는지~
  		var cnt = 0; //몇개나 사용했는지
-		
-		//이름
+ 		var mail_chk = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+	
+ 		//이름
 		if(join.name.value==""){
 			alert("이름을 입력해주세요.");
 			return false;
@@ -78,11 +84,24 @@
 		}
 		
 		
-		
 		//휴대전화
 		if(join.phone1.value==""||join.phone2.value==""||join.phone3.value==""){
 			
 		}
+		
+		// 이메일
+		
+		if(join.email_id.value==""){
+			alert("이메일을 입력해주세요.");
+			return false;
+		}
+		if(!(mail_chk.test(join.email_id.value))){
+			alert("이메일 형식을 확인해서 다시 입력하세요.");
+			join.email_id.value="";
+			join.email_id.focus();
+			return false;
+		}
+
 		
 		
 		
