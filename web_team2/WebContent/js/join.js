@@ -2,7 +2,9 @@
  * 
  */
 
-	
+	function id_ch(){
+		window.open("join_id_pop.html", "id_check", "width=600, height=400px, resizable=no, scrollbars=no");
+	}
 
 	function e_select(val){
 		
